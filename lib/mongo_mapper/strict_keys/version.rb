@@ -1,5 +1,5 @@
 module MongoMapper
-  module Plugin
+  module Plugins
     module StrictKeys
       VERSION = "0.0.1"
     end

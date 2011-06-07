@@ -1,7 +1,9 @@
+require 'mongo_mapper'
+require 'mongo_mapper/plugins'
 require 'mongo_mapper/strict_keys/version'
 
 module MongoMapper
-  module Plugin
+  module Plugins
     module StrictKeys
       extend ActiveSupport::Concern
 
@@ -10,7 +12,9 @@ module MongoMapper
       module InstanceMethods
         def ensure_key_exists(name)
           # Do nothing.
-          raise RuntimeError.new("OMG I should break your test but I don't!")
+          unless respond_to?("#{name}=")
+            raise ArgumentError.new("Attribute #{name} has not been explicitly defined as a key.")
+          end
         end
       end
 
