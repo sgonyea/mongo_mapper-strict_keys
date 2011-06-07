@@ -1,7 +1,8 @@
 require File.expand_path("../spec_helper", File.dirname(__FILE__))
 
-describe 'MongoMapper::Plugins::StrictKeys -- Forced Plugin' do
+require 'mongo_mapper/strict_keys/force_plugin'
 
+describe 'MongoMapper::Plugins::StrictKeys -- Forced Plugin' do
   class ForcedModel
     include MongoMapper::Document
 
