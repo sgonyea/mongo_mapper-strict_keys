@@ -11,7 +11,6 @@ module MongoMapper
 
       module InstanceMethods
         def ensure_key_exists(name)
-          # Do nothing.
           unless respond_to?("#{name}=")
             raise ArgumentError.new("Attribute #{name} has not been explicitly defined as a key.")
           end
