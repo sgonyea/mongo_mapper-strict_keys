@@ -16,5 +16,6 @@ To force strict keys for all models, from the outset:
 
         class StrictModel
           include MongoMapper::Document
-          include MongoMapper::Plugins::StrictKeys
+
+          strict_keys!
         end
