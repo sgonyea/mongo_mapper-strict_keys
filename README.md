@@ -19,3 +19,5 @@ To force strict keys for all models, from the outset:
 
           strict_keys!
         end
+
+If you already required the force\_plugin, then you don't need to specify 'strict_keys!'
