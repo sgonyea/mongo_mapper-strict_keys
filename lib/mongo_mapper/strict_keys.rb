@@ -1,6 +1,7 @@
 require 'mongo_mapper'
 require 'mongo_mapper/plugins'
 require 'mongo_mapper/strict_keys/version'
+require 'mongo_mapper/strict_keys/bang'
 
 module MongoMapper
   module Plugins
@@ -20,3 +21,6 @@ module MongoMapper
     end
   end
 end
+
+MongoMapper::Document.plugin(MongoMapper::Plugins::StrictKeys::Bang)
+MongoMapper::EmbeddedDocument.plugin(MongoMapper::Plugins::StrictKeys::Bang)
